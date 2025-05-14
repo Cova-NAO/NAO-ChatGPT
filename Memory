@@ -1,0 +1,23 @@
+from naoqi import ALProxy
+
+# Configuración del robot
+nao_ip = "10.47.88.76"  # Cambia esto por la IP de tu NAO
+nao_port = 9559
+
+def guardar_texto_en_memoria(texto):
+    try:
+        memory = ALProxy("ALMemory", nao_ip, nao_port)
+        memory.insertData("TextoReconocido", texto)  # Guarda el texto en una clave de memoria
+        print("[INFO] Texto guardado en ALMemory:", texto)
+    except Exception as e:
+        print("[ERROR] No se pudo guardar en ALMemory:", str(e))
+
+def obtener_texto_de_memoria():
+    try:
+        memory = ALProxy("ALMemory", nao_ip, nao_port)
+        texto = memory.getData("TextoReconocido")  # Obtiene el texto guardado
+        print("[INFO] Texto obtenido de ALMemory:", texto)
+        return texto
+    except Exception as e:
+        print("[ERROR] No se pudo obtener texto de ALMemory:", str(e))
+        return ""
