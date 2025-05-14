@@ -13,3 +13,4 @@ ALMemory → Guarda el texto reconocido. (se puede incluir en otro script)
 Python Script → Envia el texto a ChatGPT y recibe la respuesta.
 ALTextToSpeech → Convierte la respuesta de ChatGPT en voz.
 Loop y Wait → Para mantener la conversación fluida. (opcional)
+NO OLVIDES INSTALAR LOS REQUEST NECESARIOS TANTO EN UN COMPUTADORA COMO EN NAO
