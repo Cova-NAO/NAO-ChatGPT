@@ -1,0 +1,11 @@
+def escuchar():
+    asr.setLanguage("Spanish")  # Cambia a "English" si lo necesitas
+    asr.setVocabulary(["hola", "cómo estás", "adiós"], False)  
+    asr.subscribe("Test_ASR")
+
+    print("Esperando a que la persona hable...")
+    
+    while True:
+        data = memory.getData("WordRecognized")
+        if data and isinstance(data[0], str):
+            return data[0]  # Devolvemos la palabra reconocida
