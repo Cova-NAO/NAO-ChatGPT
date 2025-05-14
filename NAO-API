@@ -1,0 +1,16 @@
+from naoqi import ALProxy
+import requests
+import json
+
+# Configuración de NAO
+nao_ip = "10.47.88.76"  # 🔹 Cambia por la IP de tu NAO
+nao_port = 9559
+
+# Configuración de ChatGPT
+openai_api_key = "TU_CLAVE_OPENAI"  # 🔹 Coloca aquí tu clave de API de OpenAI
+chatgpt_endpoint = "https://api.openai.com/v1/chat/completions"
+
+# Crear proxies para controlar NAO
+tts = ALProxy("ALTextToSpeech", nao_ip, nao_port)
+asr = ALProxy("ALSpeechRecognition", nao_ip, nao_port)
+memory = ALProxy("ALMemory", nao_ip, nao_port)
