@@ -1,0 +1,10 @@
+def iniciar_conversacion():
+    while True:
+        if detectar_persona():  # Esperar a detectar una persona
+            texto_usuario = escuchar()  # Escuchar a la persona
+            print("Usuario dijo:", texto_usuario)
+
+            respuesta_chatgpt = obtener_respuesta_chatgpt(texto_usuario)  # Enviar a ChatGPT
+            print("ChatGPT respondió:", respuesta_chatgpt)
+
+            hablar(respuesta_chatgpt)  # NAO responde
