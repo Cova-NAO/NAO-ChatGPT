@@ -1,0 +1,2 @@
+def hablar(respuesta):
+    tts.say(respuesta)
