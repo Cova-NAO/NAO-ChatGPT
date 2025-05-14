@@ -1,0 +1,10 @@
+face_proxy = ALProxy("ALFaceDetection", nao_ip, nao_port)
+face_proxy.subscribe("FaceTracker")
+
+# Función para detectar una cara
+def detectar_persona():
+    while True:
+        data = memory.getData("FaceDetected")
+        if data and len(data) > 0:
+            print("Persona detectada")
+            return True
